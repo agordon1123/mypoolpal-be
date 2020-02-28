@@ -14,10 +14,10 @@ exports.up = function (knex) {
             .notNullable();
         tbl
             .integer('gallonage')
-            .notNullable()
+            .notNullable();
         tbl
             .boolean('is_salt_water')
-            .notNullable()
+            .notNullable();
     });
 };
 
