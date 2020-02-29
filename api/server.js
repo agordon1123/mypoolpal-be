@@ -9,11 +9,13 @@ server.use(helmet());
 server.use(cors());
 
 const usersRouter = require('../users/users-router');
+const poolsRouter = require('../pools/pools-router');
 
 server.get('/', (req, res) => {
     res.send({ api: 'up' });
 });
 
 server.use('/users', usersRouter);
+server.use('/pools', poolsRouter);
 
 module.exports = server;
