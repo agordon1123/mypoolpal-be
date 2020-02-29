@@ -10,6 +10,9 @@ exports.up = function (knex) {
             .onUpdate('CASCADE')
             .onDelete('CASCADE');
         tbl
+            .timestamp('created_at')
+            .defaultTo(knex.fn.now())
+        tbl
             .float('pH', 16)
             .notNullable();
         tbl
