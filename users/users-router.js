@@ -5,10 +5,6 @@ const generateToken = require('../auth/generateToken');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send({ users: 'up' });
-});
-
 router.post('/register', (req, res) => {
     const { email, password, first_name, last_name } = req.body;
 
