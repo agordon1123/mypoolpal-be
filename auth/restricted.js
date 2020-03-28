@@ -9,6 +9,7 @@ module.exports = (req, res, next) => {
     } else {
         jwt.verify(token, secrets.jwtSecret, (err, decodedToken) => {
             if (err) {
+                console.log(err)
                 res.status(401).json({ error: 'You shall not pass!' });
             } else {
                 // name is added to token on generateToken

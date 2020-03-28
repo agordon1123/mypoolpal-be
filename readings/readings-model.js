@@ -4,6 +4,7 @@ module.exports = {
     add,
     findByUserId,
     findById,
+    findByPoolId,
     update,
     remove
 }
@@ -27,6 +28,16 @@ function findById(id) {
         .where({ id })
         .select('id', 'user_id', 'pH', 'chlorine', 'alkalinity', 'salinity')
         .first();
+}
+
+function findByPoolId(userId, poolId) {
+    // find all readings from user id where poolId
+    // not currently being used
+    return db('readings')
+        .where({ user_id: userId })
+        .then(readings => {
+            console.log(readings)
+        })
 }
 
 function update(id, changes) {
