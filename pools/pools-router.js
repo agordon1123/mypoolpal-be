@@ -12,7 +12,7 @@ router.get('/:pool_id', restrictedMiddleware, (req, res) => {
         .catch(err => res.status(500).json(err))
 })
 
-router.get('/all/:user_id', (req, res) => {
+router.get('/all/:user_id', restrictedMiddleware, (req, res) => {
     const { user_id } = req.params;
 
     Pools.findByUserId(user_id)
