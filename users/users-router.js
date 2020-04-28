@@ -6,9 +6,9 @@ const generateToken = require('../auth/generateToken');
 const router = express.Router();
 
 router.post('/register', (req, res) => {
-    const { email, password, first_name, last_name } = req.body;
+    const { email, password, first_name, last_name, zipcode } = req.body;
 
-    if (!email || !password || !first_name || !last_name) {
+    if (!email || !password || !first_name || !last_name || !zipcode) {
         res.status(400).json({ error: 'Please provide the proper body with the request' });
     } else {
         hash = bcrypt.hashSync(password, 12);
@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
                     if (user && bcrypt.compareSync(password, user.password)) {
                         const token = generateToken(user);
                         delete user.password;
-
+                        
                         res.status(200).json({ token: token, user: user });
                     } else {
                         res.status(401).json({ error: 'Invalid credentials' });
