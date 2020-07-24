@@ -3,17 +3,20 @@ exports.up = function (knex) {
     return knex.schema.createTable('users', tbl => {
         tbl.increments();
         tbl
-            .string('email', 128)
+            .string('email', 64)
             .unique()
             .notNullable();
         tbl
-            .string('password', 128)
+            .string('password', 32)
             .notNullable();
         tbl
-            .string('first_name', 128)
+            .string('first_name', 64)
             .notNullable();
         tbl
-            .string('last_name')
+            .string('last_name', 64)
+            .notNullable();
+        tbl
+            .string('zipcode', 5)
             .notNullable();
     });
 };

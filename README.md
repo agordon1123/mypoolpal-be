@@ -11,10 +11,10 @@ Future releases will include a troubleshooting tree to help pool owners diagnose
 
 ### Release 1.0
 
-- [ ] User can register and log in
-- [ ] User can add a pool to their account with <long> gallonage and <boolean> isSaltWater
-- [ ] User can see list of previous logs
-- [ ] User can upload readings chlorine, pH, salinity, and alkalinity
+- [X] User can register and log in
+- [X] User can add a pool to their account with <long> gallonage and <boolean> isSaltWater
+- [X] User can see list of previous logs
+- [X] User can upload readings chlorine, pH, salinity, and alkalinity
 
 ### Release 2.0
 
